@@ -48,4 +48,28 @@ export class TodosComponent  implements OnInit {
       item:['', Validators.required]
     })
   }
+
+  addTask(){
+    this.tasks.push({
+      description : this.todoForm.value.item,
+      done:false,
+    })
+    this.todoForm.reset();
+  }
+
+  deleteTask(i : number){
+    this.tasks.splice(i,1);
+  }
+
+  deleteinProgress(i : number){
+    this.inProgress.splice(i,1);
+  }
+
+  deleteinDone(i : number){
+    this.done.splice(i,1);
+  }
+
+  editTask(i: number){
+
+  }
 }
