@@ -20,9 +20,10 @@ export class TodosComponent  implements OnInit {
  
   todoForm  !: FormGroup;
   tasks :  Task[] = [];
-  inProgress : any [] = [];
+  inProgress : Task [] = [];
   done : Task[] = [];
-
+  updateIndex !: any;
+  isEditEnable : boolean = false;
   todo = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];
   donee = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
 
@@ -57,6 +58,14 @@ export class TodosComponent  implements OnInit {
     this.todoForm.reset();
   }
 
+  updateTask(){
+   this.tasks[this.updateIndex].description = this.todoForm.value.item;
+   this.tasks[this.updateIndex].done = false; 
+   this.todoForm.reset();
+   this.updateIndex = undefined;  
+   this.isEditEnable = false;
+  }
+
   deleteTask(i : number){
     this.tasks.splice(i,1);
   }
@@ -69,7 +78,9 @@ export class TodosComponent  implements OnInit {
     this.done.splice(i,1);
   }
 
-  editTask(i: number){
-
+  onEdit(item: Task, i : number){
+    this.todoForm.controls['item'].setValue(item.description);
+    this.updateIndex = i;
+    this.isEditEnable = true;
   }
 }

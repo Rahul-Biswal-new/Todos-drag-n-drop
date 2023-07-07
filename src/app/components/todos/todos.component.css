@@ -72,3 +72,17 @@ input{
     grid-auto-flow: column;
     grid-column-gap: 10px; 
   }
+
+  .head-title{
+      margin: 0;
+      padding: 10px;
+      background-color: rgb(228, 222, 222);
+      border-radius: 4px;
+      color: #777272;
+      font-size: 1.5rem;
+      font-weight: 600;
+  }
+
+  .head-title span{    
+    font-weight: normal;
+  } 

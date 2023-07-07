@@ -2,3 +2,31 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body{
+    height: 100%;
+    background: linear-gradient(to left, #ff9494 , #9870f5);
+    /* background-color: #fff;  */
+}
+
+
+.mat-mdc-icon-button .mat-mdc-button-touch-target  .mat-mdc-icon-button .mat-mdc-button-ripple{
+    color: aqua;
+}
+.mat-mdc-focus-indicator{
+    color: green;
+}
+
+.mat-mdc-button-touch-target{
+    color: green;
+}
+
+.mat-mdc-button-ripple{
+    color: green;
+}
+.mat-icon notranslate material-icons mat-ligature-font mat-icon-no-color{
+    color: green;
+}
+.green{
+    color: green;
+}
